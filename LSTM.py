@@ -1,11 +1,11 @@
-import pandas as pd
-import numpy as np
 import torch as t
 from torch.utils.data import DataLoader, TensorDataset
 import torch.nn.functional as F
+import wandb
+wandb.login()
 
 class pylstm(t.nn.Module):
-    def __init__(self,chars,hiddensize=250,dropprob=0.4,embedsize=10,nlayers=2):
+    def __init__(self,chars,hiddensize=250,dropprob=0.2,embedsize=10,nlayers=2):
         super().__init__()
         self.hiddensize=hiddensize
         self.dropprob=dropprob
@@ -32,7 +32,18 @@ class pylstm(t.nn.Module):
         self.c0=cn
         return out
     
-def train(lstm,Xtr,ytr,no_epochs=24,basize=32,senlen=50,clip=5,lr=0.001,every=100):
+def train(lstm,Xtr,ytr,no_epochs=24,basize=32,senlen=50,clip=5,lr=0.001,every=True):
+    wandb.init(
+        project="lstm-project",
+        config={
+            "learning_rate": lr,
+            "epochs": no_epochs,
+            "batch_size": basize,
+            "sequence_length": senlen,
+            "grad_clip": clip,
+            "architecture": "Stateful LSTM"
+        }
+    )
     lstm.train()
     lstm.cuda()
     X=Xtr.view(-1,senlen)
@@ -42,21 +53,24 @@ def train(lstm,Xtr,ytr,no_epochs=24,basize=32,senlen=50,clip=5,lr=0.001,every=10
     loader = DataLoader(dataset, batch_size=basize, shuffle=False,drop_last=True)
     lossfxn = t.nn.CrossEntropyLoss()
     opt = t.optim.Adam(lstm.parameters(), lr=lr)
-    ls=[]
-    counter=0
     for _ in range(no_epochs):
         lstm.reset_hidden(basize)
+        epochloss=0
+        counter=0
         for (x,y) in loader:
             counter+=1
             opt.zero_grad()
             out=lstm(x)
             loss=lossfxn(out.view(-1,out.size(-1)),y.view(-1))
-            ls.append(loss.item())
+            epochloss+=loss.item()
             loss.backward()
             t.nn.utils.clip_grad_norm_(lstm.parameters(), clip)
             opt.step()
-            if counter%every==0:
-                print(loss.item())
+        epochloss/=counter
+        wandb.log({"train_loss": epochloss, "epoch": _})
+        if every:
+            print(epochloss)
+    wandb.finish()
     
 
 def sample(lstm,atoi,itoa,start_char='.',senlen=50,tk=5):

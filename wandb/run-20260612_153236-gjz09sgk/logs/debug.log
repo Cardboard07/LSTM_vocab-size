@@ -1,0 +1,27 @@
+2026-06-12 15:32:36,102 INFO    MainThread:37328 [wandb_init.py:setup_run_log_directory():723] Logging user logs to C:\Users\hrish\Projects\Deep_learning_projects\LSTM_Project\wandb\run-20260612_153236-gjz09sgk\logs\debug.log
+2026-06-12 15:32:36,103 INFO    MainThread:37328 [wandb_init.py:setup_run_log_directory():724] Logging internal logs to C:\Users\hrish\Projects\Deep_learning_projects\LSTM_Project\wandb\run-20260612_153236-gjz09sgk\logs\debug-internal.log
+2026-06-12 15:32:36,103 INFO    MainThread:37328 [wandb_init.py:monkeypatch_ipython():642] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x0000024ADABEEBD0>
+2026-06-12 15:32:36,104 INFO    MainThread:37328 [wandb_init.py:init():766] calling init triggers
+2026-06-12 15:32:36,104 INFO    MainThread:37328 [wandb_init.py:init():771] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.001, 'epochs': 24, 'batch_size': 32, 'sequence_length': 50, 'grad_clip': 5, 'architecture': 'Stateful LSTM', '_wandb': {}}
+2026-06-12 15:32:36,105 INFO    MainThread:37328 [wandb_init.py:init():814] starting backend
+2026-06-12 15:32:36,105 INFO    MainThread:37328 [wandb_init.py:init():829] sending inform_init request
+2026-06-12 15:32:38,584 INFO    MainThread:37328 [wandb_init.py:init():834] backend started and connected
+2026-06-12 15:32:38,588 INFO    MainThread:37328 [wandb_run.py:_label_probe_notebook():1276] probe notebook
+2026-06-12 15:32:38,588 INFO    MainThread:37328 [wandb_run.py:_label_probe_notebook():1286] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2026-06-12 15:32:38,589 INFO    MainThread:37328 [wandb_init.py:init():904] updated telemetry
+2026-06-12 15:32:38,662 INFO    MainThread:37328 [wandb_init.py:init():927] communicating run to backend with 90.0 second timeout
+2026-06-12 15:32:39,222 INFO    MainThread:37328 [wandb_init.py:init():972] starting run threads in backend
+2026-06-12 15:32:39,787 INFO    MainThread:37328 [wandb_run.py:_console_start():2523] atexit reg
+2026-06-12 15:32:39,788 INFO    MainThread:37328 [wandb_run.py:_redirect():2373] redirect: wrap_raw
+2026-06-12 15:32:39,789 INFO    MainThread:37328 [wandb_run.py:_redirect():2442] Wrapping output streams.
+2026-06-12 15:32:39,789 INFO    MainThread:37328 [wandb_run.py:_redirect():2465] Redirects installed.
+2026-06-12 15:32:39,791 INFO    MainThread:37328 [wandb_init.py:init():1010] run started, returning control to user process
+2026-06-12 15:54:39,277 INFO    MainThread:37328 [wandb_run.py:_finish():2285] finishing run hrishikesh-sanipini-vnrvjietofficial/lstm-project/gjz09sgk
+2026-06-12 15:54:39,278 INFO    MainThread:37328 [jupyter.py:save_history():435] not saving jupyter history
+2026-06-12 15:54:39,278 INFO    MainThread:37328 [jupyter.py:save_ipynb():362] not saving jupyter notebook
+2026-06-12 15:54:39,279 INFO    MainThread:37328 [wandb_init.py:_jupyter_teardown():627] cleaning up jupyter logic
+2026-06-12 15:54:39,280 INFO    MainThread:37328 [wandb_run.py:_atexit_cleanup():2490] got exitcode: 0
+2026-06-12 15:54:39,281 INFO    MainThread:37328 [wandb_run.py:_restore():2472] restore
+2026-06-12 15:54:39,282 INFO    MainThread:37328 [wandb_run.py:_restore():2478] restore done
+2026-06-12 15:54:44,170 INFO    MainThread:37328 [wandb_run.py:_footer_sync_info():3891] logging synced files

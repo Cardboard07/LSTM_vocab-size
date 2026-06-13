@@ -1,0 +1,38 @@
+{
+  "os": "Windows-10-10.0.26200-SP0",
+  "python": "CPython 3.11.15",
+  "startedAt": "2026-06-12T10:02:36.052795Z",
+  "program": "Projects/Deep_learning_projects/LSTM_Project/project.ipynb",
+  "codePath": "Projects/Deep_learning_projects/LSTM_Project/project.ipynb",
+  "git": {
+    "remote": "https://github.com/Cardboard07/LSTM_vocab-size.git",
+    "commit": "db192d62408a5aed2fec6d0b45af9811e1609302"
+  },
+  "root": "C:\\Users\\hrish\\Projects\\Deep_learning_projects\\LSTM_Project",
+  "host": "Hrishikesh",
+  "executable": "C:\\Users\\hrish\\anaconda3\\envs\\torch_env\\python.exe",
+  "cpu_count": 8,
+  "cpu_count_logical": 12,
+  "gpu": "NVIDIA GeForce RTX 2050",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "1021821579264",
+      "used": "920076750848"
+    }
+  },
+  "memory": {
+    "total": "25463480320"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 2050",
+      "memoryTotal": "4294967296",
+      "cudaCores": 2048,
+      "architecture": "Ampere",
+      "uuid": "GPU-3df1a759-324d-d071-fe1e-cefc7b3c7689"
+    }
+  ],
+  "cudaVersion": "13.1",
+  "writerId": "qbkgbqcamn8y9ix22ve4abjpuo17l2j0"
+}
